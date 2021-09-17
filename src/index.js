@@ -43,9 +43,15 @@ function loadMore(e) {
     const cardImages = gallery(images.hits);
     refs.ulEl.insertAdjacentHTML('beforeend', cardImages);
 
+    scroll();
+  });
+}
+
+function scroll() {
+  setTimeout(() => {
     refs.btnLoadMore.scrollIntoView({
       behavior: 'smooth',
       block: 'end',
     });
-  });
+  }, 1000);
 }
