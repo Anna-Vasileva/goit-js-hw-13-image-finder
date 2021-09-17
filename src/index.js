@@ -38,7 +38,12 @@ function loadMore(e) {
 
   galleryApiService.fetchImages().then(images => {
     const cardImages = gallery(images.hits);
-    refs.ulEl.innerHTML = cardImages;
+    refs.ulEl.insertAdjacentHTML('beforeend', cardImages);
+
+    refs.btnLoadMore.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+    });
   });
 
   //   console.log('loadMore');
@@ -50,3 +55,5 @@ function loadMore(e) {
   //     refs.ulEl.innerHTML = cardImages;
   //   });
 }
+
+// const element = document.getElementById('.my-element-selector');

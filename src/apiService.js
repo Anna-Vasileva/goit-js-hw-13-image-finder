@@ -28,16 +28,16 @@ export default class newsApiService {
         `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${KEY}`,
       );
 
-      console.log(response);
+      //   console.log(response);
 
       const images = response.json();
       this.incrementPage();
 
-      console.log(images);
+      //   console.log(images);
 
       return images;
     } catch (error) {
-      console.log('ошибочка!');
+      console.log('Ошибочка! Что-то пошло не так...');
     }
   }
 

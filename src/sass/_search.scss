@@ -17,6 +17,7 @@
 }
 .btn-load {
   margin-left: 0;
+  margin-bottom: 10px;
 }
 .container {
   text-align: center;
@@ -24,5 +25,16 @@
 .gallery {
   padding-left: 30px;
   margin: 0;
+
   list-style: none;
+}
+// .photo-card {
+//   text-align: left;
+// }
+.stats {
+  display: flex;
+  justify-content: center;
+}
+.stats-item:not(:last-child) {
+  margin-right: 10px;
 }
