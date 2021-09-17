@@ -20,8 +20,17 @@ function onSearch(e) {
   e.preventDefault();
 
   galleryApiService.searchQuery = e.currentTarget.elements.query.value;
+
   galleryApiService.resetPage();
   galleryApiService.fetchImages().then(images => {
+    //когда массив пустой возвращается
+    if (images.hits.length === 0) {
+      refs.ulEl.innerHTML = '';
+      //   galleryApiService.resetPage();
+      btnLoadMore.hide();
+      return;
+    }
+    //
     const cardImages = gallery(images.hits);
     refs.ulEl.innerHTML = cardImages;
     btnLoadMore.show();
